@@ -20,7 +20,7 @@ def parking_cost(minutes: int, rate_per_hour: float, free_minutes: int = 15) -> 
     """Вартість стоянки: перші free_minutes безкоштовні."""
     if rate_per_hour < 0:
         raise ValueError("Тариф не може бути від'ємним")
-    if minutes <= free_minutes:
+    if minutes < free_minutes:
         return 0.0
     return billable_hours(minutes) * rate_per_hour
 
